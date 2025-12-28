@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Die besten Geschenkideen 2026</title>
     <style>
-        /* Grundlegendes Reset & Schrift */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -28,9 +27,30 @@
 
         header h1 {
             font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        main {
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            background-color: #45a049;
+        }
+
+        nav a:hover {
+            background-color: #3e8e41;
+        }
+
+        section {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
@@ -85,51 +105,59 @@
 
     <header>
         <h1>Die besten Geschenkideen 2026</h1>
+        <nav>
+            <a href="#frauen">Frauen</a>
+            <a href="#alle">Geschenke für alle</a>
+            <a href="#männer">Männer</a>
+        </nav>
     </header>
 
-    <main>
+    <!-- Frauen -->
+    <section id="frauen">
         <div class="category">
-            <h2>Technik</h2>
-            <p>Entdecke die neuesten Smartphones, Smartwatches und Gadgets, die jedes Technik-Herz höher schlagen lassen.</p>
+            <h2>Technik für Frauen</h2>
+            <p>Smarter Schmuck, Fitness-Tracker und innovative Gadgets speziell für Frauen.</p>
+            <a href="https://www.amazon.de/s?k=technik+frauen" target="_blank">Jetzt entdecken</a>
+        </div>
+        <div class="category">
+            <h2>Bücher für Frauen</h2>
+            <p>Inspirierende Romane, Ratgeber und spannende Geschichten, die Frauen begeistern.</p>
+            <a href="https://www.amazon.de/s?k=bücher+frauen" target="_blank">Jetzt entdecken</a>
+        </div>
+    </section>
+
+    <!-- Geschenke für alle -->
+    <section id="alle">
+        <div class="category">
+            <h2>Allgemeine Technik</h2>
+            <p>Smartphones, Kopfhörer und Gadgets, die jedem Freude machen.</p>
             <a href="https://www.amazon.de/s?k=technik+geschenk" target="_blank">Jetzt entdecken</a>
         </div>
-
         <div class="category">
-            <h2>Bücher</h2>
-            <p>Von spannenden Romanen bis zu inspirierenden Sachbüchern – finde das perfekte Geschenk für Bücherliebhaber.</p>
+            <h2>Bücher für alle</h2>
+            <p>Romane, Sachbücher und Bestseller für alle Altersgruppen.</p>
             <a href="https://www.amazon.de/s?k=bücher+geschenk" target="_blank">Jetzt entdecken</a>
         </div>
-
         <div class="category">
-            <h2>test222222</h2>
-            <p>Kleine, clevere Tools und witzige Gadgets für den Alltag – ideal zum Verschenken.</p>
+            <h2>Gadgets für alle</h2>
+            <p>Clevere Tools, lustige Gadgets und nützliche Alltagshelfer.</p>
             <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
         </div>
+    </section>
 
+    <!-- Männer -->
+    <section id="männer">
         <div class="category">
-            <h2>test</h2>
-            <p>Kleine, clevere Tools und witzige Gadgets für den Alltag – ideal zum Verschenken.</p>
-            <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
+            <h2>Technik für Männer</h2>
+            <p>Smartwatches, Gaming-Zubehör und coole technische Spielereien für Männer.</p>
+            <a href="https://www.amazon.de/s?k=technik+männer" target="_blank">Jetzt entdecken</a>
         </div>
-
         <div class="category">
-            <h2>test2</h2>
-            <p>Kleine, clevere Tools und witzige Gadgets für den Alltag – ideal zum Verschenken.</p>
-            <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
+            <h2>Bücher für Männer</h2>
+            <p>Spannende Thriller, Abenteuerromane und Ratgeber speziell für Männer.</p>
+            <a href="https://www.amazon.de/s?k=bücher+männer" target="_blank">Jetzt entdecken</a>
         </div>
-
-        <div class="category">
-            <h2>test3</h2>
-            <p>Kleine, clevere Tools und witzige Gadgets für den Alltag – ideal zum Verschenken.</p>
-            <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
-        </div>
-
-        <div class="category">
-            <h2>test4</h2>
-            <p>Kleine, clevere Tools und witzige Gadgets für den Alltag – ideal zum Verschenken.</p>
-            <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
-        </div>
-    </main>
+    </section>
 
     <footer>
         &copy; 2026 Geschenkideen Website. Alle Rechte vorbehalten.
@@ -137,6 +165,3 @@
 
 </body>
 </html>
-
-
-
