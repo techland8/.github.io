@@ -27,36 +27,54 @@
 
         header h1 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
 
-        nav {
+        /* Tabs Navigation */
+        .tabs {
             display: flex;
             justify-content: center;
+            margin: 2rem 0;
             gap: 1rem;
-            margin-top: 1rem;
         }
 
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 0.5rem 1rem;
+        .tabs label {
+            padding: 0.75rem 1.5rem;
+            background-color: #ddd;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            background-color: #45a049;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        nav a:hover {
-            background-color: #3e8e41;
+        .tabs label:hover {
+            background-color: #ccc;
         }
 
-        section {
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Aktives Tab Styling */
+        input[type="radio"]:checked + label {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Bereich für jede Kategorie */
+        .tab-content {
+            display: none;
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 0 auto 2rem auto;
             padding: 0 1rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+        }
+
+        /* Sichtbar wenn ausgewählt */
+        #tab-frauen:checked ~ .content #frauen-content,
+        #tab-alle:checked ~ .content #alle-content,
+        #tab-maenner:checked ~ .content #maenner-content {
+            display: grid;
         }
 
         .category {
@@ -95,69 +113,73 @@
         footer {
             text-align: center;
             padding: 1.5rem;
-            margin-top: 2rem;
             font-size: 0.9rem;
             color: #777;
         }
+
     </style>
 </head>
 <body>
 
     <header>
         <h1>Die besten Geschenkideen 2026</h1>
-        <nav>
-            <a href="#frauen">Frauen</a>
-            <a href="#alle">Geschenke für alle</a>
-            <a href="#männer">Männer</a>
-        </nav>
     </header>
 
-    <!-- Frauen -->
-    <section id="frauen">
-        <div class="category">
-            <h2>Technik für Frauen</h2>
-            <p>Smarter Schmuck, Fitness-Tracker und innovative Gadgets speziell für Frauen.</p>
-            <a href="https://www.amazon.de/s?k=technik+frauen" target="_blank">Jetzt entdecken</a>
-        </div>
-        <div class="category">
-            <h2>Bücher für Frauen</h2>
-            <p>Inspirierende Romane, Ratgeber und spannende Geschichten, die Frauen begeistern.</p>
-            <a href="https://www.amazon.de/s?k=bücher+frauen" target="_blank">Jetzt entdecken</a>
-        </div>
-    </section>
+    <!-- Tabs -->
+    <input type="radio" id="tab-frauen" name="tabs" checked>
+    <label for="tab-frauen">Frauen</label>
 
-    <!-- Geschenke für alle -->
-    <section id="alle">
-        <div class="category">
-            <h2>Allgemeine Technik</h2>
-            <p>Smartphones, Kopfhörer und Gadgets, die jedem Freude machen.</p>
-            <a href="https://www.amazon.de/s?k=technik+geschenk" target="_blank">Jetzt entdecken</a>
-        </div>
-        <div class="category">
-            <h2>Bücher für alle</h2>
-            <p>Romane, Sachbücher und Bestseller für alle Altersgruppen.</p>
-            <a href="https://www.amazon.de/s?k=bücher+geschenk" target="_blank">Jetzt entdecken</a>
-        </div>
-        <div class="category">
-            <h2>Gadgets für alle</h2>
-            <p>Clevere Tools, lustige Gadgets und nützliche Alltagshelfer.</p>
-            <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
-        </div>
-    </section>
+    <input type="radio" id="tab-alle" name="tabs">
+    <label for="tab-alle">Geschenke für alle</label>
 
-    <!-- Männer -->
-    <section id="männer">
-        <div class="category">
-            <h2>Technik für Männer</h2>
-            <p>Smartwatches, Gaming-Zubehör und coole technische Spielereien für Männer.</p>
-            <a href="https://www.amazon.de/s?k=technik+männer" target="_blank">Jetzt entdecken</a>
+    <input type="radio" id="tab-maenner" name="tabs">
+    <label for="tab-maenner">Männer</label>
+
+    <div class="content">
+
+        <!-- Frauen -->
+        <div id="frauen-content" class="tab-content">
+            <div class="category">
+                <h2>Schmuck</h2>
+                <p>Elegante Ketten, Armbänder und Ohrringe für besondere Anlässe.</p>
+                <a href="https://www.amazon.de/s?k=schmuck+frau" target="_blank">Jetzt entdecken</a>
+            </div>
+            <div class="category">
+                <h2>Beauty</h2>
+                <p>Pflegeprodukte und Kosmetik-Sets, die Frauen lieben.</p>
+                <a href="https://www.amazon.de/s?k=beauty+geschenk+frau" target="_blank">Jetzt entdecken</a>
+            </div>
         </div>
-        <div class="category">
-            <h2>Bücher für Männer</h2>
-            <p>Spannende Thriller, Abenteuerromane und Ratgeber speziell für Männer.</p>
-            <a href="https://www.amazon.de/s?k=bücher+männer" target="_blank">Jetzt entdecken</a>
+
+        <!-- Geschenke für alle -->
+        <div id="alle-content" class="tab-content">
+            <div class="category">
+                <h2>Bücher</h2>
+                <p>Spannende Romane und inspirierende Sachbücher für jeden Geschmack.</p>
+                <a href="https://www.amazon.de/s?k=bücher+geschenk" target="_blank">Jetzt entdecken</a>
+            </div>
+            <div class="category">
+                <h2>Gadgets</h2>
+                <p>Kleine, clevere Tools für den Alltag – ideal zum Verschenken.</p>
+                <a href="https://www.amazon.de/s?k=gadgets+geschenk" target="_blank">Jetzt entdecken</a>
+            </div>
         </div>
-    </section>
+
+        <!-- Männer -->
+        <div id="maenner-content" class="tab-content">
+            <div class="category">
+                <h2>Technik</h2>
+                <p>Die neuesten Smartphones, Smartwatches und Gadgets für Technik-Fans.</p>
+                <a href="https://www.amazon.de/s?k=technik+geschenk+mann" target="_blank">Jetzt entdecken</a>
+            </div>
+            <div class="category">
+                <h2>Sport & Fitness</h2>
+                <p>Ausrüstung, Wearables und Zubehör für sportliche Männer.</p>
+                <a href="https://www.amazon.de/s?k=sport+geschenk+mann" target="_blank">Jetzt entdecken</a>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
         &copy; 2026 Geschenkideen Website. Alle Rechte vorbehalten.
